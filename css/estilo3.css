@@ -1,0 +1,41 @@
+/**
+Finalmente, trabajaremos nuestra lista secundaria utilizando la propiedad 
+display con valor “none”, esto debido a que inicialmente no queremos que se 
+muestre nuestra lista secundaria, sino que se muestre al momento de colocar 
+el mouse encima del item principal. Para ello utilizamos la pseudoclase :hover, 
+para cambiarle el valor a “block” y se muestre:
+**/
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  font-family: Helvetica;
+  width: 480px;
+  margin: 0 auto;
+}
+ul{
+  list-style: none;
+}
+#menu li>a{
+  background-color: grey;
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  min-width: 100px;
+}
+#menu li>a:hover{
+  color: #000;
+  background-color: #eaeaea;
+}
+#menu>li{
+  float: left;
+  text-align:center
+}
+#menu>li>ul{
+  display: none;
+}
+#menu>li:hover>ul {
+  display:block;
+}

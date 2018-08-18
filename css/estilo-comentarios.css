@@ -1,0 +1,40 @@
+/**
+
+    Primero los estilos al fieldset
+    Luego al legend
+    Luego con #form ol voy a quitarle los numeros a la lista
+    Ahora voy a aplicar un espaciado a cada elemento #form ol li
+    Para aplicar formato a cada etiqueta uso #form ol li label
+    Para aplicar estilo a los cuadros de texto es un poco distinto #form input[type=text]
+    Al boton voy a aplicarle una clase #form input.btn
+
+**/
+#form {
+    border:1px solid #990000;
+    width:450px;
+    margin:auto;
+}
+#form legend{
+    font-weight:bold;
+    font-size:12px;
+}
+#form ol{
+    list-style:none;
+}
+#form ol li{
+    padding-bottom:5px;
+}
+#form ol li label{
+    width:120px;
+    float:left;
+    text-align:left;
+}
+#form input[type=text] {
+    border:1px solid #CCCCCC;
+}
+#form input.btn {
+    padding:3px;
+    color:#FFFFFF;
+    background-color:#990000;
+    border:1px solid #000000;
+}

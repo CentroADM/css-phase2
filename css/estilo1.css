@@ -1,0 +1,26 @@
+/**
+Primero reseteamos los valores de margin y padding a todos nuestros elementos 
+con el selector universal “*”, con esto nos aseguraremos que el padding izquierdo 
+que trae por defecto el elemento “ul” no nos traiga problemas más adelante en 
+nuestro diseño. 
+
+Al elemento header le daremos un ancho de 480px, dado que más adelante cada uno de los 4 items superiores del menú encajará en un ancho de 120px. Además centramos este elemento horizontalmente y utilizaremos la familia de fuentes sans-serif, similar a la que usamos en la plataforma. A la lista “ul” le quitaremos los estilos de lista y definiremos los estilos de nuestros enlaces que irán dentro de nuestros items, 
+estos enlaces, tendrán fondo gris, color de letra blanco, sin subrayado.
+**/
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  font-family: sans-serif;
+  width: 480px;
+  margin: 0 auto;
+}
+ul{
+  list-style: none;
+}
+#menu li>a{
+  background-color: grey;
+  color: white;
+  text-decoration: none;
+}

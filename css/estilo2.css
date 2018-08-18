@@ -1,0 +1,41 @@
+/**
+Además, dispondremos nuestros enlaces principales de izquierda a derecha del 
+menú, para esto, los convertiremos en bloques, le daremos un ancho mínimo de 
+100px que sumados a los padding de 10px del lado izquierdo y 10px del lado 
+derecho dan un total de 120px. 
+
+También utilizaremos la pseudoclase :hover para cambiar el color de fondo y 
+letra cuando el mouse se ubique encima de nuestro enlace. Además, cada item 
+principal tendrá el texto centrado y utilizaremos la propiedad float con el 
+valor “left” para que los elemento se ubiquen de izquierda a derecha, quedando 
+los items secundarios ubicados de arriba hacia abajo dado que no se ven 
+afectados por la propiedad float. 
+**/
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  font-family: Helvetica;
+  width: 480px;
+  margin: 0 auto;
+}
+ul{
+  list-style: none;
+}
+#menu li>a{
+  background-color: grey;
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  min-width: 100px;
+}
+#menu li>a:hover{
+  color: black;
+  background-color: #eaeaea;
+}
+#menu>li{
+  float: left;
+  text-align:center
+}
