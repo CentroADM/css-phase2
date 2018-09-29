@@ -1,0 +1,97 @@
+<html>    
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <title>Tooltips personalizados</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>	
+	<style>
+	body{
+	    background: steelblue;		
+		font-family: Arial, Verdana;
+	}
+	
+	.tooltip_elemento {
+        position: relative;
+    }
+	
+	h2{
+	    color: #FFF;
+		margin-top: 100px;
+	}
+	
+	a{
+	    color: #CCC
+	}
+
+    .tooltip {
+        display: none;
+        position: absolute;
+        width: 200px;    
+        padding: 10px;
+        margin: 0 0 12px 0;    
+        z-index: 100;
+        bottom: 100%;
+        background: #FDD017;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        font-size: 11px;
+	    border-radius: 5px;
+    }
+
+    .tooltip:after {
+        content: "";
+        position: absolute;
+        bottom: -14px;
+        z-index: 100;
+        border: 0 solid #FDD017;
+        border-bottom: 14px solid transparent;
+	    border-left-width: 10px;
+        width: 50%;
+        left: 50%;
+    }
+ 
+    .tooltip:before {
+        content: "";
+        position: absolute;
+        border: 0 solid #FDD017;
+        bottom: -14px;
+        z-index: 100;
+	    border-right-width: 10px;
+        border-bottom: 14px solid transparent;
+        width: 50%;
+        right: 50%;
+    }
+
+	</style>
+</head>
+<body>
+    <center>
+    <h2>Tooltips con JQuery</h2>
+    <a href="#" title="Este enlace actualmente no lleva a ningún lado pero sirve para mostrarte el uso del tooltip" class="tooltip_elemento center">Tooltip en un enlace</a>
+    <div class="tooltip">Texto del tooltip</div>
+    </center>
+
+
+    <script type="text/javascript">
+        jQuery("a").mouseenter(function (e) {             
+            var posMouse = e.pageX - this.offsetLeft; 
+            var textoTooltip = jQuery(this).attr("title"); 
+			
+            if (textoTooltip.length > 0) {
+                jQuery(this).append('<div class="tooltip">' + textoTooltip + '</div>');
+                jQuery("a > div.tooltip").css("left", "" + posMouse - 103 + "px");
+                jQuery("a > div.tooltip").fadeIn(300);
+            }
+        });
+
+        jQuery("a").mouseleave(function () {             
+            jQuery("a > div.tooltip").fadeOut(300).delay(300).queue(function () {
+                jQuery(this).remove();
+                jQuery(this).dequeue();
+            });
+        });
+    </script>
+
+
+</body></html>
